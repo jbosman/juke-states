@@ -1,3 +1,8 @@
 'use strict';
 
-var juke = angular.module('juke', []);
+var juke = angular.module('juke', ['ui.router']);
+
+juke.config( function( $urlRouterProvider, $locationProvider ){
+	$locationProvider.html5Mode(true);
+	$urlRouterProvider.when('/' , '/albums');
+});
